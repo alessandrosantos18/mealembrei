@@ -1,0 +1,18 @@
+h2 {
+	text-align: center;
+}
+
+tr, th, td{
+	border: 1px solid black ;
+}
+
+div.container{
+background-color: #fff;
+width: 380px;
+display: block;
+margin:0 auto;
+}
+body{
+background-color: black;
+	
+}

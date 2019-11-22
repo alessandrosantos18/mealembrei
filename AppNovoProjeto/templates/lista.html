@@ -1,0 +1,79 @@
+<!-- Extender do templates base -->
+{% extends 'base.html' %}
+
+{% load static %}
+
+<!-- Bloco que define o title da pagina -->
+{% block title %}Pagina Inicial{% endblock %}
+
+<!-- Bloco de conteudo da pagina -->
+{% block conteudo %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="">
+          
+        </a>
+        <button class="navbar-toggler" type="button" 
+            data-toggle="collapse" data-target="#conteudo-navbar" 
+            aria-controls="conteudo-navbar" aria-expanded="false" 
+            aria-label="Ativar navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudo-navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'inicio' %}">
+                       Inicio
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'exercicio' %}">
+                      Exercicios
+                    </a>
+                </li>
+                <li class="nav-item a">
+                    <a class="nav-link" href="{% url 'agenda' %}">
+                      Agenda
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'alimentacao' %}">
+                      Alimentação
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'remedios' %}">
+                      Remédios
+                    </a>
+                </li>
+            </ul>           
+        </div>
+    </nav>
+    
+    <br><br>
+    
+    
+    
+    
+	<h3>Lista de Remedio</h3>
+	<table>
+		<tr>
+			<th>nome:</th>
+			<th>Data</th>
+				
+		</tr>
+		
+		{% for remedio in remedios %}
+		<tr>
+		
+			<td>{{remedio.nome }}</td>
+			<td>{{remedio.data }}</td>
+		</tr>
+		
+		{% endfor %}	
+
+	</table>
+	<p><a href="{% url 'remedios' %}">Voltar</a></p>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+<!-- Extender do templates base -->
+{% extends 'base.html' %}
+
+{% load static %}
+
+<!-- Bloco que define o title da pagina -->
+{% block title %}Login de usuario{% endblock %}
+
+<!-- Bloco de conteudo da pagina -->
+{% block conteudo %}
+<h2 align="center">Login</h2>	
+
+	
+	<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Login de Usuario</h5>
+          
+          <form method="post">
+            <!-- Não se esqueça dessa tag -->
+            {% csrf_token %}
+
+            <!-- Nome -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Email</span>
+              </div>
+             {{ form.email }}
+            </div>
+
+            <!-- Sobrenome -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span  class="input-group-text" >Senha</span>
+              </div>
+              {{ form.sobrenome }}
+            </div>
+
+            <button class="btn btn-outline-second"><a href="{% url 'inicio' %}">Logar</a></button>  <button class="btn btn-outline-danger"><a href="{% url 'index' %}">Cadastrar-se</a> </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

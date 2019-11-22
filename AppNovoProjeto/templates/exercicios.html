@@ -1,0 +1,68 @@
+<!-- Extender do templates base -->
+{% extends 'base.html' %}
+
+{% load static %}
+
+<!-- Bloco que define o title da pagina -->
+{% block title %}Pagina Inicial{% endblock %}
+
+<!-- Bloco de conteudo da pagina -->
+{% block conteudo %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="">
+          
+        </a>
+        <button class="navbar-toggler" type="button" 
+            data-toggle="collapse" data-target="#conteudo-navbar" 
+            aria-controls="conteudo-navbar" aria-expanded="false" 
+            aria-label="Ativar navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudo-navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'inicio' %}">
+                       Inicio
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'exercicio' %}">
+                      Exercicios
+                    </a>
+                </li>
+                <li class="nav-item a">
+                    <a class="nav-link" href="{% url 'agenda' %}">
+                      Agenda
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'alimentacao' %}">
+                      Alimentação
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'remedios' %}">
+                      Remédios
+                    </a>
+                </li>
+            </ul>           
+        </div>
+    </nav>
+    
+    <br><br>
+    
+    <h3>Execícios para pessoas com alzheimer</h3>
+    
+   <br>
+   <p>	Exercicios fisicos para pessoas com alzheimer Ajudar o indivíduo a movimentar-se mais livremente, mantendo alguma autonomia e mobilidade para se mexer na cama, sentar ou andar, por exemplo; </p>
+    <br>
+    <br>
+    <h5>Exercícios para Alzheimer inicial </h5>
+      <p>De forma geral, quando a pessoa descobre que está com Alzheimer deve realizar exercícios aeróbico, de força, equilíbrio e coordenação, por isso os casos mais recentes de Alzheimer, podem beneficiar-se de exercícios em grupo, com pesos e bolas, caminhada, corrida, natação, hidroginástica e Pilates.</p>
+	
+	
+	
+
+{% endblock %}

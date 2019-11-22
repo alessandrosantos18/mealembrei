@@ -1,0 +1,84 @@
+<!-- Extender do templates base -->
+{% extends 'base.html' %}
+
+{% load static %}
+
+<!-- Bloco que define o title da pagina -->
+{% block title %}Cadastro de usuario{% endblock %}
+
+<!-- Bloco de conteudo da pagina -->
+{% block conteudo %}
+<h2 align="center">Cadastro de Usuario</h2>	
+
+	
+	<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Cadastro de Usuario</h5>
+          <p class="card-text">
+            Complete o formulário abaixo para cadastrar
+            um novo <code>Usuario</code>.
+          </p>
+          <form method="post">
+            <!-- Não se esqueça dessa tag -->
+            {% csrf_token %}
+
+            <!-- Nome -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nome</span>
+              </div>
+             {{ form.nome }}
+            </div>
+
+            <!-- Sobrenome -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Sobrenome</span>
+              </div>
+              {{ form.sobrenome }}
+            </div>
+
+            <!-- CPF -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">CPF</span>
+              </div>
+              {{ form.cpf }}
+            </div>
+
+            <!-- Tempo de Serviço -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Celular</span>
+              </div>
+              {{ form.celular }}
+            </div>
+
+            <!-- Remuneração -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Telefone Fixo</span>
+              </div>
+              {{ form.TelefoneFixo }}
+            </div>
+            
+            <!-- Remuneração -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Email</span>
+              </div>
+              {{ form.email }}
+            </div>
+
+            <button class="btn btn-second"><a href="{% url 'login' %}">Enviar</a></button> 
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
